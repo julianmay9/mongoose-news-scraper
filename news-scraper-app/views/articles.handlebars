@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+
+    </div>
+    <div class="col-md-6">
+      <h3>"{{data.title}}" Comments</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+
+    </div>
+    <div class="col-md-6">
+      <a href="/saved"><button style="padding: 6px 12px; float:right; margin-left:1%">Saved Articles</button></a>
+      <a href="/"><button style="padding: 6px 12px; float:right;">Home</button></a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+
+    </div>
+    <div class="col-md-6">
+      <div class="card mt-4">
+        <div class="card-body">
+            <form class="clearfix mb-4">
+              <div class="form-group">
+                <label for="comment-title"><h4>Title</h4></label>
+                <input type="text" id="comment-title" class="form-control" aria-describedby="title-text" placeholder="Comment Title">
+              </div>
+              <div class="form-group">
+                <label for="comment-text"><h4>Comment on the article</h4></label>
+                <textarea class="form-control" id="comment-text" rows="8" aria-describedby="comment-text" placeholder="Your Comment"></textarea>
+              </div>
+              <br>
+              <button id="submit-comment" data-id={{data._id}} style="padding: 5px 10px; float:right">Submit</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  <div class="row">
+    <div class="col-md-6">
+      
+    </div>
+    <div class="col-md-6">
+        <h4>Other Comments</h4>
+          {{#if data.note}}
+            {{#each data.note}}
+              <hr>
+              <button data-id={{this._id}} class="delete-comment" style="padding: 5px 10px; float:right">Delete</button>
+              <h4><strong>{{this.title}}</strong></h4>
+              <h5>{{this.body}}</h5>
+              <hr>
+            {{/each}}
+          {{else}}
+            <h4>There are no comments on this article. You can be the first!</h4>
+          {{/if}}
+    </div>
+  </div>
+</div>

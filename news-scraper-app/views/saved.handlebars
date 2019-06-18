@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+
+        </div>
+        <div class="col-md-6">
+            <h1>Saved Articles</h1>
+            <h4>Store the stories you want to read later.</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+
+        </div>
+        <div class="col-md-6">
+             <a href="/"><button style="float-left;">Home</button></a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            
+        </div>
+        <div class="col-md-6">
+            <div id="articles" style="padding-right:3%;">
+            {{#each saved}}
+                <hr>
+                <button data-id={{this._id}} class="delete-article" style="padding: 3px 6px; float:right;">Remove from Saved</button>
+                <button data-id={{this._id}} class="see-comments" style="padding: 3px 6px; float:right; margin-right:.5%">View Comments</button>
+                <h4><strong>{{this.title}}</strong></h4>
+                <a href="{{this.link}}">{{this.link}}</a> 
+                <hr>
+            {{/each}}
+            </div>
+        </div>
+    </div>
+</div>
