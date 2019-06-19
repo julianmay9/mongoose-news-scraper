@@ -49,6 +49,7 @@ app.get("/", function(req, res) {
 
 // GET route for scraping the Guardian website
 app.get("/scrape", function(req, res) {
+  results = [];
   var found;
   var headlines = [];
     db.Article.find({})
